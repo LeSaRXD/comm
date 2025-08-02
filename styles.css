@@ -201,6 +201,16 @@ footer {
 	margin-right: 25%;
 }
 
+@media only screen and (max-width: var(--gallery-height)) {
+	.gallery>img:first-child {
+		margin-left: 0;
+	}
+
+	.gallery>img:last-child {
+		margin-right: 0;
+	}
+}
+
 .prices {
 	width: 100%;
 	display: grid;
