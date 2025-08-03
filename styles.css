@@ -6,8 +6,9 @@
 
 	--max-body-width: 28rem;
 	--min-body-width: 12rem;
+	--body-padding: 1rem;
 	--gap: 0.7rem;
-	--gallery-height: max(40vh, 15rem);
+	--gallery-height: 15rem;
 }
 
 html {
@@ -27,7 +28,7 @@ body {
 	max-width: min(100%, var(--max-body-width));
 	min-width: var(--min-body-width);
 	margin: 0 auto;
-	padding: 2rem 1rem;
+	padding: 2rem var(--body-padding);
 	box-sizing: border-box;
 
 	background-color: rgba(255, 255, 255, 5%);
@@ -181,7 +182,7 @@ footer {
 	scroll-snap-type: x mandatory;
 	scroll-behavior: smooth;
 
-	height: var(--gallery-height);
+	height: max(40vh, var(--gallery-height));
 }
 
 .gallery>img {
@@ -191,24 +192,16 @@ footer {
 
 	scroll-snap-align: center;
 	user-select: none;
+
+	--margins: calc((min(100%, var(--max-body-width)) - var(--gallery-height)) / 2);
 }
 
 .gallery>img:first-child {
-	margin-left: 25%;
+	margin-left: var(--margins);
 }
 
 .gallery>img:last-child {
-	margin-right: 25%;
-}
-
-@media only screen and (max-width: var(--gallery-height)) {
-	.gallery>img:first-child {
-		margin-left: 0;
-	}
-
-	.gallery>img:last-child {
-		margin-right: 0;
-	}
+	margin-right: var(--margins);
 }
 
 .prices {
