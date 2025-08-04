@@ -193,7 +193,7 @@ footer {
 	scroll-snap-align: center;
 	user-select: none;
 
-	--margins: calc((min(100%, var(--max-body-width)) - var(--gallery-height)) / 2);
+	--margins: max(calc((min(100%, var(--max-body-width)) - var(--gallery-height)) / 2), 0);
 }
 
 .gallery>img:first-child {
