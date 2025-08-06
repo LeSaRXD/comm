@@ -8,7 +8,7 @@
 	--min-body-width: 12rem;
 	--body-padding: 1rem;
 	--gap: 0.7rem;
-	--gallery-height: 15rem;
+	--gallery-height: max(40vh, 15rem);
 }
 
 html {
@@ -182,7 +182,7 @@ footer {
 	scroll-snap-type: x mandatory;
 	scroll-behavior: smooth;
 
-	height: max(40vh, var(--gallery-height));
+	height: var(--gallery-height);
 }
 
 .gallery>img {
@@ -193,7 +193,7 @@ footer {
 	scroll-snap-align: center;
 	user-select: none;
 
-	--margins: max(calc((min(100%, var(--max-body-width)) - var(--gallery-height)) / 2), 0);
+	--margins: max(calc((100% - var(--gallery-height)) / 2), 0%);
 }
 
 .gallery>img:first-child {
