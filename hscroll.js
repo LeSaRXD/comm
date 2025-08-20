@@ -21,8 +21,6 @@ const gallery_up = () => {
 	if (selected_gallery == null)
 		return;
 
-	console.log("up");
-
 	selected_gallery.style["scroll-snap-type"] = null;
 	selected_gallery.style["scroll-behavior"] = null;
 	selected_gallery = null;
