@@ -197,6 +197,7 @@ summary h3 {
 
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	gap: 1rem;
 
 	background-color: color-mix(in srgb, var(--bg) 70%, transparent);
@@ -206,7 +207,7 @@ summary h3 {
 #gallery img {
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
-	object-fit: scale-down;
+	object-fit: contain;
 
 	pointer-events: none;
 	user-select: none;
