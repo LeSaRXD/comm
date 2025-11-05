@@ -8,5 +8,5 @@ const open_tos = () => {
 	tos.scrollIntoView();
 	document.style["scroll-behavior"] = null;
 }
-document.addEventListener("DOMContentLoaded", open_tos);
+window.addEventListener("load", open_tos);
 window.addEventListener("popstate", open_tos);

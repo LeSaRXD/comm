@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	gallery.addEventListener("click", close_gallery);
+	window.addEventListener("popstate", close_gallery);
 	gallery.addEventListener("wheel", scroll_gallery);
 	window.addEventListener("keydown", (e) => { if (e.key == "Escape") close_gallery(); });
 
@@ -27,10 +28,12 @@ const open_gallery = (e) => {
 	gallery.replaceChildren(...new_children);
 
 	gallery.style.display = null;
+	gallery.scrollLeft = 0;
 }
 const close_gallery = () => {
 	gallery.replaceChildren();
 	gallery.style.display = "none";
+	gallery.scrollLeft = 0;
 }
 const scroll_gallery = (e) => {
 	e.preventDefault();
