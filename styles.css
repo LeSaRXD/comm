@@ -93,7 +93,7 @@ body {
 
 .cta img {
 	width: 1.5rem;
-	aspect-ratio: 1/1;
+	height: 1.5rem;
 }
 
 .imp::before {
@@ -145,8 +145,9 @@ main {
 }
 
 .card_image {
-	aspect-ratio: 1/1;
-	cursor: pointer;
+	height: 100%;
+	width: auto;
+	cursor: zoom-in;
 }
 
 .card_text {
@@ -163,7 +164,7 @@ summary::marker {
 	font-size: 150%;
 }
 
-section h1 {
+#types {
 	align-self: flex-start;
 }
 
@@ -193,7 +194,7 @@ summary h3 {
 	overflow-x: scroll;
 	scroll-snap-type: x mandatory;
 	scroll-behavior: smooth;
-	cursor: w-resize;
+	cursor: zoom-out;
 
 	display: flex;
 	flex-direction: row;
@@ -214,14 +215,17 @@ summary h3 {
 
 	max-width: 100%;
 	max-height: 100%;
+
+	--margin: calc(max(0px, 100vw - 100vh) / 2);
+	--margin: calc(max(0px, 100svw - 100svh) / 2);
 }
 
 #gallery img:first-child {
-	margin-left: 25%;
+	margin-left: var(--margin);
 }
 
 #gallery img:last-child {
-	margin-right: 25%;
+	margin-right: var(--margin);
 }
 
 footer {
@@ -246,5 +250,10 @@ footer {
 		width: min(16rem, 100%);
 		flex-direction: column;
 		height: unset;
+	}
+
+	.card_image {
+		width: 100%;
+		height: auto;
 	}
 }

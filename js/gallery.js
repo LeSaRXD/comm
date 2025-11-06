@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	gallery.addEventListener("click", close_gallery);
 	window.addEventListener("popstate", close_gallery);
-	gallery.addEventListener("wheel", scroll_gallery);
 	window.addEventListener("keydown", (e) => { if (e.key == "Escape") close_gallery(); });
 
 	for (const image of document.getElementsByClassName("card_image")) {
@@ -28,14 +27,10 @@ const open_gallery = (e) => {
 	gallery.replaceChildren(...new_children);
 
 	gallery.style.display = null;
-	gallery.scrollLeft = 0;
+	document.body.style.overflow = "hidden";
+	gallery.scroll({ left: Math.max(0, window.innerWidth - window.innerHeight) / 2, behavior: "instant" });
 }
 const close_gallery = () => {
-	gallery.replaceChildren();
 	gallery.style.display = "none";
-	gallery.scrollLeft = 0;
-}
-const scroll_gallery = (e) => {
-	e.preventDefault();
-	gallery.scrollLeft += Math.sign(e.deltaY) * window.innerWidth / 2;
+	document.body.style.overflow = null;
 }
